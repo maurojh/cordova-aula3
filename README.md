@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 20:03 -->
+<!-- 2020-02-21 sex 20:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,15 +232,16 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbd5cdb4">1. Trocando imagens ao apertar um botão</a></li>
-<li><a href="#orgdbf467c">2. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org624e479">3. Instalando plugin</a></li>
+<li><a href="#org7da750f">1. Trocando imagens ao apertar um botão</a></li>
+<li><a href="#orge6356df">2. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#orgf0adce5">3. Executando depois de um tempo determinado</a></li>
+<li><a href="#orgf32023a">4. Instalando plugin</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgbd5cdb4" class="outline-2">
-<h2 id="orgbd5cdb4"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
+<div id="outline-container-org7da750f" class="outline-2">
+<h2 id="org7da750f"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Você deve baixar duas imagens de WIFI ligado e desligado. Deve salvá-las na pasta <b>img</b> dentro de <b>www</b>.
@@ -299,8 +300,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-orgdbf467c" class="outline-2">
-<h2 id="orgdbf467c"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
+<div id="outline-container-orge6356df" class="outline-2">
+<h2 id="orge6356df"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Utilize o CSS abaixo na sua página:
@@ -324,7 +325,7 @@ Em seguida escolha um ícone em:
 </p>
 
 <p>
-Clique em um ícone desejado e do lado esquerdo aparece como inserí-lo na página:
+Clique em um ícone desejado e do lado esquerdo (selected icon) aparece como inserí-lo na página:
 </p>
 
 <pre class="example">
@@ -338,105 +339,65 @@ No caso anterior, basta alterar o innerHTML de &lt;i&gt;, <b>wifi_off</b> para <
 </p>
 
 <p>
-Podemos criar uma função que altera o ícone assim:
+A página que recebe o ícone ao ínves da imagem fica assim:
 </p>
 
 <pre class="example">
 &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html&gt;
+
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Sinal&lt;/title&gt;
-    &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"&gt;
-      &lt;style&gt;
-          i {
-              font-size: 500%;
-          }
-    &lt;/style&gt;
-    &lt;script&gt;
-    var ligado = true;
-    function muda() {
-        var item = document.getElementsByTagName("i");
-        
-        if(ligado) {
-            item[0].innerHTML = "wifi_off";
-            ligado = false;
-        } else {
-            item[0].innerHTML = "wifi"
-            ligado = true;
-        }
-    }
-        
-    &lt;/script&gt;
+    &lt;meta name="format-detection" content="telephone=no"&gt;
+    &lt;meta name="msapplication-tap-highlight" content="no"&gt;
+    &lt;meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="css/index.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
     &lt;i class="material-icons"&gt;
-wifi
-&lt;/i&gt;
+        wifi_off
+    &lt;/i&gt;
+    &lt;input type="button" id="botao" value="Liga/Desliga"&gt;
+    &lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;
 </pre>
 
 <p>
-Em seguida podemos inserir um botão que faz a alteração de wifi ligado para wifi desligado e vice-versa:
+Podemos criar uma função que altera o ícone assim, em <b>js/index.js</b>:
 </p>
 
 <pre class="example">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Sinal&lt;/title&gt;
-    &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"&gt;
-      &lt;style&gt;
-          i {
-              font-size: 500%;
-          }
-    &lt;/style&gt;
-    &lt;script&gt;
-    var ligado = true;
-    function muda() {
-        var item = document.getElementsByTagName("i");
-        
-        if(ligado) {
-            item[0].innerHTML = "wifi_off";
-            ligado = false;
-        } else {
-            item[0].innerHTML = "wifi"
-            ligado = true;
-        }
-    }
-        
-setInterval(muda, 2000);
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;i class="material-icons"&gt;
-wifi
-&lt;/i&gt;
-&lt;input type="button" id="botao" value="Lig/Des"&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-#+BEGIN_EXAMPLE
+var ligado = true;
 
-O funcionamento desse botão deve ficar, quando acontecer o evento "click" a função muda() é executada.
+function troca() {
+    var lista = document.getElementsByTagName("i");
+    var icone = lista[0]; // Só o primeiro &lt;i&gt;
 
-Para isso adicionamos o código abaixo ao script:
+    if(ligado == true) {
+        ligado = false;
+        icone.innerHTML = "wifi_off";
+    } else {
+        ligado = true;
+        icone.innerHTML = "wifi";
+    }    
+}
 
-#+BEGIN_EXAMPLE
-function inicio() {
-        var botao = document.getElementById("botao");
-        
-        botao.addEventListener("click", muda);
-    }
-        
 window.onload = function() {
-    inicio();
+    var botao = document.getElementById("botao");
+    botao.addEventListener("click", troca);
 }
 </pre>
+</div>
+</div>
 
+<div id="outline-container-orgf0adce5" class="outline-2">
+<h2 id="orgf0adce5"><span class="section-number-2">3</span> Executando depois de um tempo determinado</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Podemos também de tempos em tempos executar a função muda(), para isso utilizamos a função setInterval().
 </p>
@@ -466,9 +427,9 @@ setInterval(muda, 2000);
 </div>
 </div>
 
-<div id="outline-container-org624e479" class="outline-2">
-<h2 id="org624e479"><span class="section-number-2">3</span> Instalando plugin</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgf32023a" class="outline-2">
+<h2 id="orgf32023a"><span class="section-number-2">4</span> Instalando plugin</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
 </p>
@@ -605,7 +566,7 @@ wifi
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 20:03</p>
+<p class="date">Created: 2020-02-21 sex 20:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
