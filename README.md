@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 19:10 -->
+<!-- 2020-02-21 sex 19:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,13 +232,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8667e90">1. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org2db3f48">2. Instalando plugin</a></li>
+<li><a href="#org5fb9ea6">1. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#org73a674e">2. Instalando plugin</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8667e90" class="outline-2">
-<h2 id="org8667e90"><span class="section-number-2">1</span> Podemos usar os ícones do Material Design</h2>
+
+<div id="outline-container-org5fb9ea6" class="outline-2">
+<h2 id="org5fb9ea6"><span class="section-number-2">1</span> Podemos usar os ícones do Material Design</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Utilize o CSS abaixo na sua página:
@@ -272,7 +273,7 @@ wifi_off
 </pre>
 
 <p>
-No caso anterior, basta alterar o innerHTML de &lt;i&gt;, <b>wifi<sub>off</sub></b> para <b>wifi</b> que o ícone muda.
+No caso anterior, basta alterar o innerHTML de &lt;i&gt;, <b>wifi_off</b> para <b>wifi</b> que o ícone muda.
 </p>
 
 <p>
@@ -404,8 +405,8 @@ setInterval(muda, 2000);
 </div>
 </div>
 
-<div id="outline-container-org2db3f48" class="outline-2">
-<h2 id="org2db3f48"><span class="section-number-2">2</span> Instalando plugin</h2>
+<div id="outline-container-org73a674e" class="outline-2">
+<h2 id="org73a674e"><span class="section-number-2">2</span> Instalando plugin</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
@@ -543,7 +544,7 @@ wifi
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 19:10</p>
+<p class="date">Created: 2020-02-21 sex 19:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
