@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 19:57 -->
+<!-- 2020-02-21 sex 20:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,15 +232,15 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8690981">1. Trocando imagens ao apertar um botão</a></li>
-<li><a href="#org01bc803">2. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org2643392">3. Instalando plugin</a></li>
+<li><a href="#orgbd5cdb4">1. Trocando imagens ao apertar um botão</a></li>
+<li><a href="#orgdbf467c">2. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#org624e479">3. Instalando plugin</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8690981" class="outline-2">
-<h2 id="org8690981"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
+<div id="outline-container-orgbd5cdb4" class="outline-2">
+<h2 id="orgbd5cdb4"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Você deve baixar duas imagens de WIFI ligado e desligado. Deve salvá-las na pasta <b>img</b> dentro de <b>www</b>.
@@ -253,15 +253,22 @@ E usar os códigos à seguir:
 <pre class="example">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
+
 &lt;head&gt;
+    &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"&gt;
+    &lt;meta name="format-detection" content="telephone=no"&gt;
+    &lt;meta name="msapplication-tap-highlight" content="no"&gt;
+    &lt;meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Teste de figura&lt;/title&gt;
     &lt;script src="js/programa.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
     &lt;img src="img/wifion.png" alt="" id="imagem" width="100"&gt;
     &lt;input type="button" id="botao" value="Liga/Desliga"&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;
 </pre>
 
@@ -292,8 +299,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-org01bc803" class="outline-2">
-<h2 id="org01bc803"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
+<div id="outline-container-orgdbf467c" class="outline-2">
+<h2 id="orgdbf467c"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Utilize o CSS abaixo na sua página:
@@ -459,8 +466,8 @@ setInterval(muda, 2000);
 </div>
 </div>
 
-<div id="outline-container-org2643392" class="outline-2">
-<h2 id="org2643392"><span class="section-number-2">3</span> Instalando plugin</h2>
+<div id="outline-container-org624e479" class="outline-2">
+<h2 id="org624e479"><span class="section-number-2">3</span> Instalando plugin</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
@@ -598,7 +605,7 @@ wifi
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 19:57</p>
+<p class="date">Created: 2020-02-21 sex 20:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
