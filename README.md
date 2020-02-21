@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 19:40 -->
+<!-- 2020-02-21 sex 19:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,15 +232,69 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5fb9ea6">1. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org73a674e">2. Instalando plugin</a></li>
+<li><a href="#org8690981">1. Trocando imagens ao apertar um botão</a></li>
+<li><a href="#org01bc803">2. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#org2643392">3. Instalando plugin</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5fb9ea6" class="outline-2">
-<h2 id="org5fb9ea6"><span class="section-number-2">1</span> Podemos usar os ícones do Material Design</h2>
+<div id="outline-container-org8690981" class="outline-2">
+<h2 id="org8690981"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Você deve baixar duas imagens de WIFI ligado e desligado. Deve salvá-las na pasta <b>img</b> dentro de <b>www</b>.
+</p>
+
+<p>
+E usar os códigos à seguir:
+</p>
+
+<pre class="example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Teste de figura&lt;/title&gt;
+    &lt;script src="js/programa.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img src="img/wifion.png" alt="" id="imagem" width="100"&gt;
+    &lt;input type="button" id="botao" value="Liga/Desliga"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+E colocar o código abaixo na pasta <b>js</b> com nome <b>programa.js</b>:
+</p>
+
+<pre class="example">
+var ligado = true;
+
+function troca() {
+    var imagem = document.getElementById("imagem");
+
+    if(ligado == true) {
+        ligado = false;
+        imagem.src = "img/wifioff.png";
+    } else {
+        ligado = true;
+        imagem.src = "img/wifion.png";
+    }    
+}
+
+window.onload = function() {
+    var botao = document.getElementById("botao");
+    botao.addEventListener("click", troca);
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org01bc803" class="outline-2">
+<h2 id="org01bc803"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Utilize o CSS abaixo na sua página:
 </p>
@@ -405,9 +459,9 @@ setInterval(muda, 2000);
 </div>
 </div>
 
-<div id="outline-container-org73a674e" class="outline-2">
-<h2 id="org73a674e"><span class="section-number-2">2</span> Instalando plugin</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org2643392" class="outline-2">
+<h2 id="org2643392"><span class="section-number-2">3</span> Instalando plugin</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
 </p>
@@ -544,7 +598,7 @@ wifi
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 19:40</p>
+<p class="date">Created: 2020-02-21 sex 19:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
