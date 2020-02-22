@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 21:51 -->
+<!-- 2020-02-21 sex 21:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,16 +232,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4200c8e">1. Trocando imagens ao apertar um botão</a></li>
-<li><a href="#org2778c0a">2. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org3a34591">3. Executando depois de um tempo determinado</a></li>
-<li><a href="#org3e3a760">4. Instalando plugin</a></li>
+<li><a href="#org9ebb6e5">1. Trocando imagens ao apertar um botão</a></li>
+<li><a href="#orgd32640f">2. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#org5034c23">3. Executando depois de um tempo determinado</a></li>
+<li><a href="#orgd4be110">4. Instalando plugin</a></li>
+<li><a href="#org92fd2eb">5. Adicionando eventos</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4200c8e" class="outline-2">
-<h2 id="org4200c8e"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
+<div id="outline-container-org9ebb6e5" class="outline-2">
+<h2 id="org9ebb6e5"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Você deve baixar duas imagens de WIFI ligado e desligado. Deve salvá-las na pasta <b>img</b> dentro de <b>www</b>.
@@ -300,8 +301,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-org2778c0a" class="outline-2">
-<h2 id="org2778c0a"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
+<div id="outline-container-orgd32640f" class="outline-2">
+<h2 id="orgd32640f"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Utilize o CSS abaixo na sua página:
@@ -395,8 +396,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-org3a34591" class="outline-2">
-<h2 id="org3a34591"><span class="section-number-2">3</span> Executando depois de um tempo determinado</h2>
+<div id="outline-container-org5034c23" class="outline-2">
+<h2 id="org5034c23"><span class="section-number-2">3</span> Executando depois de um tempo determinado</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Podemos também de tempos em tempos executar a função muda(), para isso utilizamos a função setInterval().
@@ -457,8 +458,8 @@ E o botão não é mais necessário no <b>index.html</b>:
 </div>
 </div>
 
-<div id="outline-container-org3e3a760" class="outline-2">
-<h2 id="org3e3a760"><span class="section-number-2">4</span> Instalando plugin</h2>
+<div id="outline-container-orgd4be110" class="outline-2">
+<h2 id="orgd4be110"><span class="section-number-2">4</span> Instalando plugin</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
@@ -477,7 +478,7 @@ cordova plugin add cordova-plugin-network-information
 </pre>
 
 <p>
-Podemos usar a função dada como exemplo para determinar o tipo de conexão:
+Podemos usar a função dada como exemplo para determinar o tipo de conexão em <b>index.js</b>:
 </p>
 
 <pre class="example">
@@ -544,7 +545,12 @@ A página <b>index.html</b> agora possui um parágrafo para exibir a conexão:
 
 &lt;/html&gt;
 </pre>
+</div>
+</div>
 
+<div id="outline-container-org92fd2eb" class="outline-2">
+<h2 id="org92fd2eb"><span class="section-number-2">5</span> Adicionando eventos</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Podemos adicionar EventListener para o caso da internet cair:
 </p>
@@ -641,7 +647,7 @@ wifi
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 21:51</p>
+<p class="date">Created: 2020-02-21 sex 21:55</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
