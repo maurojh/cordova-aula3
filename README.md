@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-21 sex 21:55 -->
+<!-- 2020-02-21 sex 22:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -232,17 +232,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9ebb6e5">1. Trocando imagens ao apertar um botão</a></li>
-<li><a href="#orgd32640f">2. Podemos usar os ícones do Material Design</a></li>
-<li><a href="#org5034c23">3. Executando depois de um tempo determinado</a></li>
-<li><a href="#orgd4be110">4. Instalando plugin</a></li>
-<li><a href="#org92fd2eb">5. Adicionando eventos</a></li>
+<li><a href="#org9c1cbff">1. Trocando imagens ao apertar um botão</a></li>
+<li><a href="#org68c3738">2. Podemos usar os ícones do Material Design</a></li>
+<li><a href="#org89e8a7e">3. Executando depois de um tempo determinado</a></li>
+<li><a href="#org447d4e4">4. Instalando plugin</a></li>
+<li><a href="#org988d14a">5. Adicionando eventos</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9ebb6e5" class="outline-2">
-<h2 id="org9ebb6e5"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
+<div id="outline-container-org9c1cbff" class="outline-2">
+<h2 id="org9c1cbff"><span class="section-number-2">1</span> Trocando imagens ao apertar um botão</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Você deve baixar duas imagens de WIFI ligado e desligado. Deve salvá-las na pasta <b>img</b> dentro de <b>www</b>.
@@ -301,8 +301,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-orgd32640f" class="outline-2">
-<h2 id="orgd32640f"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
+<div id="outline-container-org68c3738" class="outline-2">
+<h2 id="org68c3738"><span class="section-number-2">2</span> Podemos usar os ícones do Material Design</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Utilize o CSS abaixo na sua página:
@@ -396,8 +396,8 @@ window.onload = function() {
 </div>
 </div>
 
-<div id="outline-container-org5034c23" class="outline-2">
-<h2 id="org5034c23"><span class="section-number-2">3</span> Executando depois de um tempo determinado</h2>
+<div id="outline-container-org89e8a7e" class="outline-2">
+<h2 id="org89e8a7e"><span class="section-number-2">3</span> Executando depois de um tempo determinado</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Podemos também de tempos em tempos executar a função muda(), para isso utilizamos a função setInterval().
@@ -458,8 +458,8 @@ E o botão não é mais necessário no <b>index.html</b>:
 </div>
 </div>
 
-<div id="outline-container-orgd4be110" class="outline-2">
-<h2 id="orgd4be110"><span class="section-number-2">4</span> Instalando plugin</h2>
+<div id="outline-container-org447d4e4" class="outline-2">
+<h2 id="org447d4e4"><span class="section-number-2">4</span> Instalando plugin</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Podemos verificar a conexão com a Internet usando o plugin cordova-plugin-network-information.
@@ -548,8 +548,8 @@ A página <b>index.html</b> agora possui um parágrafo para exibir a conexão:
 </div>
 </div>
 
-<div id="outline-container-org92fd2eb" class="outline-2">
-<h2 id="org92fd2eb"><span class="section-number-2">5</span> Adicionando eventos</h2>
+<div id="outline-container-org988d14a" class="outline-2">
+<h2 id="org988d14a"><span class="section-number-2">5</span> Adicionando eventos</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Podemos adicionar EventListener para o caso da internet cair:
@@ -572,82 +572,75 @@ document.addEventListener("online", voltou, false);
 </pre>
 
 <p>
-Resolver:
+O código em <b>index.js</b> fica:
+</p>
+
+<pre class="example">
+var app = {
+    // Application Constructor
+    initialize: function () {
+        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+    },
+
+    // deviceready Event Handler
+    //
+    // Bind any cordova events here. Common events are:
+    // 'pause', 'resume', etc.
+    onDeviceReady: function () {
+        this.receivedEvent('deviceready');
+    },
+
+    // Update DOM on a Received Event
+    receivedEvent: function (id) {
+        document.addEventListener("offline", caiu, false);
+        document.addEventListener("online", voltou, false);        
+    },
+};
+
+function caiu() {
+    var item = document.getElementsByTagName("i");
+    item[0].innerHTML = "wifi_off";
+}
+
+function voltou() {
+    var item = document.getElementsByTagName("i");
+    item[0].innerHTML = "wifi";
+}
+
+app.initialize();
+</pre>
+
+<p>
+E a página inicial <b>index.html</b> fica:
 </p>
 
 <pre class="example">
 &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-   &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"&gt;
+&lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
         &lt;meta name="format-detection" content="telephone=no"&gt;
         &lt;meta name="msapplication-tap-highlight" content="no"&gt;
         &lt;meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Sinal&lt;/title&gt;
-    &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"&gt;
-      &lt;style&gt;
-          i {
-              font-size: 500%;
-          }
-    &lt;/style&gt;
-    &lt;script&gt;
-    var ligado = true;
-    function muda(texto) {
-        var item = document.getElementsByTagName("i");
-        
-        if(ligado) {
-            item[0].innerHTML = "wifi_off";
-            ligado = false;
-        } else {
-            item[0].innerHTML = "wifi"
-            ligado = true;
-        }
-        
-        var pa = document.getElementById("para");
-        pa.innerHTML = texto;
-    }
-        
-window.onload = function() {
-    setInterval(verificaConexao, 2000);
-}
-        
-
-        
-    function verificaConexao() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Conexão desconhecida';
-    states[Connection.ETHERNET] = 'Conexão ethernet';
-    states[Connection.WIFI]     = 'Conexão WiFi';
-    states[Connection.CELL_2G]  = 'Conexão 2G';
-    states[Connection.CELL_3G]  = 'Conexão 3G';
-    states[Connection.CELL_4G]  = 'Conexão 4G';
-    states[Connection.CELL]     = 'Conexão genérica';
-    states[Connection.NONE]     = 'Sem conexão';
-
-    muda(states[networkState]);
-}
-
-    &lt;/script&gt;
+         &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
-    &lt;i class="material-icons"&gt;
-wifi
-&lt;/i&gt;
-&lt;input type="button" id="botao" value="Lig/Des"&gt;
-&lt;p id="para"&gt;&lt;/p&gt;
-&lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+    &lt;i class="material-icons" style="font-size: 500%;"&gt;
+        wifi_off
+    &lt;/i&gt;
+    &lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;
 </pre>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 sex 21:55</p>
+<p class="date">Created: 2020-02-21 sex 22:06</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
